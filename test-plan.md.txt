@@ -1,0 +1,73 @@
+## Test Plan – Todo App
+
+### Objective
+To ensure the Todo app works correctly through both UI and API, covering login and todo CRUD operations.
+
+### Scope
+- UI Functional tests (login, todo create/edit/delete)
+We will test the following user flows:
+
+Login with valid and invalid credentials.
+
+Create a new item (e.g., a Todo or User).
+
+Edit an existing item.
+
+Delete an item.
+
+Assert that data is present or updated after each operation.
+
+### Backend (Node.js API) — API Testing with Postman/Newman
+- We will automate test cases for the following endpoints:
+
+- POST /login
+
+- GET /items
+
+- POST /items
+
+- PUT /items/:id
+
+- DELETE /items/:id
+
+###Each endpoint will be tested with:
+
+- Positive tests: Valid payloads, correct behavior.
+
+- Negative tests: Invalid inputs, missing fields, unauthorized access.
+- API tests (positive/negative cases)
+
+### Tools Used/Tools justificationa 
+- Cypress (UI testing)  - its user friendly, greate React support and enhanced debugging 
+- Postman - wdely used and intuitive for designing and running test cases.
+- Visua studio Code-  its good for managing both backend and frontend testing 
+
+
+### Test Coverage
+- POST /login (success/fail)
+- GET /todos
+- POST /todos
+- PUT /todos/:id
+- DELETE /todos/:id
+- UI login, create/edit/delete flows
+
+### Test Execution 
+1. Start backend: `cd backend && node app.js`
+
+2. Start frontend: `cd frontend && npm start`
+3. Run API tests: `cd backend && npm test`
+4. Run UI tests: `cd frontend && npx cypress open`
+5. Once the cypress is open, launch the browser and go to Todo and run the code 
+
+### Assumptions & Limitations
+- The backend must be running locally on port 3001.
+
+- The frontend must be running and accessible to Cypress.
+
+- Mocking is not implemented; tests hit real endpoints.
+
+- Authentication is assumed to return a token stored in localStorage (for UI tests).
+
+- Some negative test cases may fail if backend validation is minimal.
+
+
